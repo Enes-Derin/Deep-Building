@@ -55,6 +55,19 @@ body {
     min-height: 100vh;
 }
 
+.hero {
+    background-image: url('./hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10rem 0;
+    text-align: center;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -159,7 +172,7 @@ body {
    HERO SECTION
    ============================================ */
 
-.hero {
+/* .hero {
     min-height: 600px;
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0ea5e9 100%);
     background-attachment: fixed;
@@ -168,7 +181,7 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
-}
+} */
 
 .hero::before {
     content: '';
@@ -576,15 +589,21 @@ body {
    ============================================ */
 
 .cta-section {
-    padding: 4rem var(--spacing-unit);
+    /* padding: 4rem var(--spacing-unit);
     background: var(--gradient-secondary);
     position: relative;
     overflow: hidden;
     border-top: 1px solid rgba(0, 217, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 0, 110, 0.1);
+    border-bottom: 1px solid rgba(255, 0, 110, 0.1); */
+
+    background-image: url("./duz-muhendislik-ve-insaat-cizimi_23-2148892788.avif");
+    opacity: 0.7;
+    padding: 4rem var(--spacing-unit);
+    background-size: cover;
+    background-position: center;
 }
 
-.cta-section::before {
+/* .cta-section::before {
     content: '';
     position: absolute;
     top: -50%;
@@ -593,11 +612,11 @@ body {
     height: 400px;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
     border-radius: 50%;
-}
+} */
 
 .cta-box {
     text-align: center;
-    color: var(--text-light);
+    color: var(--text-dark);
     position: relative;
     z-index: 2;
 }

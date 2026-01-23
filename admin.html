@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Paneli - Deep İnşaat</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <!-- Admin Header -->
+    <div class="admin-header">
+        <div class="admin-title">
+            <i class="fas fa-lock"></i> Admin Paneli - Deep İnşaat
+        </div>
+        <button class="logout-btn" onclick="logout()">Çıkış Yap</button>
+    </div>
+
+    <!-- Admin Container -->
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <div class="admin-sidebar">
+            <button class="nav-btn active" onclick="showSection('dashboard')">
+                <i class="fas fa-chart-line"></i> Dashboard
+            </button>
+            <button class="nav-btn" onclick="showSection('projects')">
+                <i class="fas fa-project-diagram"></i> Projeler
+            </button>
+            <button class="nav-btn" onclick="showSection('services')">
+                <i class="fas fa-cog"></i> Hizmetler
+            </button>
+            <button class="nav-btn" onclick="showSection('messages')">
+                <i class="fas fa-envelope"></i> Mesajlar
+            </button>
+            <button class="nav-btn" onclick="showSection('settings')">
+                <i class="fas fa-sliders-h"></i> Ayarlar
+            </button>
+        </div>
+
+        <!-- Content -->
+        <div class="admin-content">
+            <!-- Dashboard Section -->
+            <div id="dashboard" class="admin-section active">
+                <div class="section-header">
+                    <h2>Dashboard</h2>
+                    <p>Genel istatistikler ve özet bilgiler</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="stat-number" id="projectCount">0</div>
+                        <div class="stat-label">Toplam Proje</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" id="serviceCount">0</div>
+                        <div class="stat-label">Hizmet Sayısı</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number" id="messageCount">0</div>
+                        <div class="stat-label">Gelen Mesaj</div>
+                    </div>
+                </div>
+
+                <div class="section-header">
+                    <h3>Son Mesajlar</h3>
+                </div>
+                <div id="recentMessages"></div>
+            </div>
+
+            <!-- Projects Section -->
+            <div id="projects" class="admin-section">
+                <div class="section-header">
+                    <h2>Proje Yönetimi</h2>
+                    <p>Proje ekleyin, düzenleyin veya silin</p>
+                </div>
+
+                <div class="admin-form">
+                    <h3>Yeni Proje Ekle</h3>
+                    <form id="projectForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="projectName">Proje Adı *</label>
+                                <input type="text" id="projectName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectLocation">Lokasyon *</label>
+                                <input type="text" id="projectLocation" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="projectCategory">Kategori *</label>
+                                <select id="projectCategory" required>
+                                    <option>Konut</option>
+                                    <option>Ticari</option>
+                                    <option>Taahhüt</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectArea">Alan (m²) *</label>
+                                <input type="number" id="projectArea" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="projectYear">Yıl *</label>
+                                <input type="text" id="projectYear" placeholder="2023-2024" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="projectImage">Görsel URL</label>
+                                <input type="text" id="projectImage" placeholder="https://example.com/image.jpg">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectDescription">Açıklama *</label>
+                            <textarea id="projectDescription" required></textarea>
+                        </div>
+                        <button type="submit" class="admin-button">Proje Ekle</button>
+                    </form>
+                </div>
+
+                <div class="section-header">
+                    <h3>Mevcut Projeler</h3>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Proje Adı</th>
+                            <th>Lokasyon</th>
+                            <th>Kategori</th>
+                            <th>Alan</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projectsList"></tbody>
+                </table>
+            </div>
+
+            <!-- Services Section -->
+            <div id="services" class="admin-section">
+                <div class="section-header">
+                    <h2>Hizmet Yönetimi</h2>
+                    <p>Hizmetleri düzenleyin</p>
+                </div>
+
+                <div class="admin-form">
+                    <h3>Hizmet Bilgisini Güncelle</h3>
+                    <form id="serviceForm">
+                        <div class="form-group">
+                            <label for="serviceName">Hizmet Adı *</label>
+                            <input type="text" id="serviceName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceDescription">Açıklama *</label>
+                            <textarea id="serviceDescription" required></textarea>
+                        </div>
+                        <button type="submit" class="admin-button">Güncelle</button>
+                    </form>
+                </div>
+
+                <div class="section-header">
+                    <h3>Mevcut Hizmetler</h3>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Hizmet Adı</th>
+                            <th>Açıklama</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody id="servicesList"></tbody>
+                </table>
+            </div>
+
+            <!-- Messages Section -->
+            <div id="messages" class="admin-section">
+                <div class="section-header">
+                    <h2>Gelen Mesajlar</h2>
+                    <p>Müşteri mesajlarını görüntüleyin</p>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Ad</th>
+                            <th>E-posta</th>
+                            <th>Konu</th>
+                            <th>Tarih</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody id="messagesList"></tbody>
+                </table>
+            </div>
+
+            <!-- Settings Section -->
+            <div id="settings" class="admin-section">
+                <div class="section-header">
+                    <h2>Site Ayarları</h2>
+                    <p>Genel site ayarlarını yapılandırın</p>
+                </div>
+
+                <div class="admin-form">
+                    <h3>Şirket Bilgileri</h3>
+                    <form id="settingsForm">
+                        <div class="form-group">
+                            <label for="companyName">Şirket Adı</label>
+                            <input type="text" id="companyName" value="Deep İnşaat">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="companyEmail">E-posta</label>
+                                <input type="email" id="companyEmail" value="info@fixtrack.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="companyPhone">Telefon</label>
+                                <input type="tel" id="companyPhone" value="+90 (212) 123 45 67">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="companyAddress">Adres</label>
+                            <textarea id="companyAddress">İstanbul, Türkiye</textarea>
+                        </div>
+                        <button type="submit" class="admin-button">Kaydet</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize app
+        function initializeApp() {
+            loadProjects();
+            loadServices();
+            loadMessages();
+            updateDashboard();
+        }
+
+        // Show section
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.admin-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            event.target.closest('.nav-btn').classList.add('active');
+        }
+
+        // Project Management
+        document.getElementById('projectForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const project = {
+                id: Date.now(),
+                name: document.getElementById('projectName').value,
+                location: document.getElementById('projectLocation').value,
+                category: document.getElementById('projectCategory').value,
+                area: document.getElementById('projectArea').value,
+                year: document.getElementById('projectYear').value,
+                image: document.getElementById('projectImage').value,
+                description: document.getElementById('projectDescription').value
+            };
+
+            // Save to localStorage
+            let projects = JSON.parse(localStorage.getItem('projects')) || [];
+            projects.push(project);
+            localStorage.setItem('projects', JSON.stringify(projects));
+
+            // Reset form
+            this.reset();
+
+            // Reload projects
+            loadProjects();
+            updateDashboard();
+
+            alert('Proje başarıyla eklendi!');
+        });
+
+        function loadProjects() {
+            const projects = JSON.parse(localStorage.getItem('projects')) || [];
+            const tbody = document.getElementById('projectsList');
+            tbody.innerHTML = '';
+
+            if (projects.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:2rem;">Henüz proje eklenmemiştir.</td></tr>';
+                return;
+            }
+
+            projects.forEach(project => {
+                const row = `
+                    <tr>
+                        <td><strong>${project.name}</strong></td>
+                        <td>${project.location}</td>
+                        <td><span style="background-color:#f0f0f0;padding:0.3rem 0.6rem;border-radius:4px;font-size:0.85rem;">${project.category}</span></td>
+                        <td>${project.area} m²</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="admin-button secondary" onclick="editProject(${project.id})">Düzenle</button>
+                                <button class="admin-button danger" onclick="deleteProject(${project.id})">Sil</button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        }
+
+        function deleteProject(id) {
+            if (!confirm('Projeyi silmek istediğinizden emin misiniz?')) return;
+
+            let projects = JSON.parse(localStorage.getItem('projects')) || [];
+            projects = projects.filter(p => p.id !== id);
+            localStorage.setItem('projects', JSON.stringify(projects));
+
+            loadProjects();
+            updateDashboard();
+        }
+
+        function editProject(id) {
+            const projects = JSON.parse(localStorage.getItem('projects')) || [];
+            const project = projects.find(p => p.id === id);
+            if (!project) return;
+
+            document.getElementById('projectName').value = project.name;
+            document.getElementById('projectLocation').value = project.location;
+            document.getElementById('projectCategory').value = project.category;
+            document.getElementById('projectArea').value = project.area;
+            document.getElementById('projectYear').value = project.year;
+            document.getElementById('projectImage').value = project.image || '';
+            document.getElementById('projectDescription').value = project.description;
+
+            // Update form button
+            const btn = document.querySelector('#projectForm button[type="submit"]');
+            btn.textContent = 'Projeyi Güncelle';
+
+            // Handle update
+            const form = document.getElementById('projectForm');
+            form.onsubmit = function (e) {
+                e.preventDefault();
+
+                const updatedProject = {
+                    ...project,
+                    name: document.getElementById('projectName').value,
+                    location: document.getElementById('projectLocation').value,
+                    category: document.getElementById('projectCategory').value,
+                    area: document.getElementById('projectArea').value,
+                    year: document.getElementById('projectYear').value,
+                    image: document.getElementById('projectImage').value,
+                    description: document.getElementById('projectDescription').value
+                };
+
+                let projects = JSON.parse(localStorage.getItem('projects')) || [];
+                projects = projects.map(p => p.id === id ? updatedProject : p);
+                localStorage.setItem('projects', JSON.stringify(projects));
+
+                form.reset();
+                form.onsubmit = null;
+                btn.textContent = 'Proje Ekle';
+                loadProjects();
+                updateDashboard();
+                alert('Proje başarıyla güncellendi!');
+            };
+        }
+
+        // Services Management
+        function loadServices() {
+            const services = [
+                { id: 1, name: 'Anahtar Teslim İnşaat', desc: 'Baştan sona tam hizmet' },
+                { id: 2, name: 'Konut Projeleri', desc: 'Yaşamak için tasarlanan projeler' },
+                { id: 3, name: 'Ticari Yapılar', desc: 'Modern ticari alanlar' },
+                { id: 4, name: 'Proje Danışmanlığı', desc: 'Profesyonel danışmanlık hizmetleri' }
+            ];
+
+            const tbody = document.getElementById('servicesList');
+            tbody.innerHTML = '';
+
+            services.forEach(service => {
+                const row = `
+                    <tr>
+                        <td><strong>${service.name}</strong></td>
+                        <td>${service.desc}</td>
+                        <td>
+                            <button class="admin-button secondary" onclick="alert('Hizmet düzenleme özelliği')">Düzenle</button>
+                        </td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        }
+
+        // Messages Management
+        function loadMessages() {
+            const messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+            const tbody = document.getElementById('messagesList');
+            tbody.innerHTML = '';
+
+            if (messages.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;padding:2rem;">Henüz mesaj yok.</td></tr>';
+                return;
+            }
+
+            messages.reverse().forEach((msg, index) => {
+                const date = new Date(msg.timestamp).toLocaleDateString('tr-TR');
+                const row = `
+                    <tr>
+                        <td>${msg.name}</td>
+                        <td><a href="mailto:${msg.email}">${msg.email}</a></td>
+                        <td>${msg.subject}</td>
+                        <td>${date}</td>
+                        <td>
+                            <button class="admin-button secondary" onclick="viewMessage(${index})">Oku</button>
+                            <button class="admin-button danger" onclick="deleteMessage(${index})">Sil</button>
+                        </td>
+                    </tr>
+                `;
+                tbody.innerHTML += row;
+            });
+        }
+
+        function viewMessage(index) {
+            const messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+            const msg = messages[messages.length - 1 - index];
+            alert(`Ad: ${msg.name}\nE-posta: ${msg.email}\nTelefon: ${msg.phone}\n\nMesaj:\n${msg.message}`);
+        }
+
+        function deleteMessage(index) {
+            if (!confirm('Mesajı silmek istediğinizden emin misiniz?')) return;
+
+            let messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+            messages.splice(messages.length - 1 - index, 1);
+            localStorage.setItem('contactMessages', JSON.stringify(messages));
+
+            loadMessages();
+            updateDashboard();
+        }
+
+        // Dashboard
+        function updateDashboard() {
+            const projects = JSON.parse(localStorage.getItem('projects')) || [];
+            const messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
+            const services = 4;
+
+            document.getElementById('projectCount').textContent = projects.length;
+            document.getElementById('messageCount').textContent = messages.length;
+            document.getElementById('serviceCount').textContent = services;
+
+            // Show recent messages
+            const recentDiv = document.getElementById('recentMessages');
+            if (messages.length === 0) {
+                recentDiv.innerHTML = '<div class="empty-state"><i class="fas fa-inbox"></i><p>Henüz mesaj yok</p></div>';
+            } else {
+                let html = '<table class="data-table"><thead><tr><th>Ad</th><th>E-posta</th><th>Konu</th><th>Tarih</th></tr></thead><tbody>';
+                messages.slice(-5).reverse().forEach(msg => {
+                    const date = new Date(msg.timestamp).toLocaleDateString('tr-TR');
+                    html += `<tr><td>${msg.name}</td><td>${msg.email}</td><td>${msg.subject}</td><td>${date}</td></tr>`;
+                });
+                html += '</tbody></table>';
+                recentDiv.innerHTML = html;
+            }
+        }
+
+        function logout() {
+            if (confirm('Çıkış yapmak istediğinizden emin misiniz?')) {
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Initialize on load
+        window.addEventListener('load', initializeApp);
+    </script>
+</body>
+
+</html>

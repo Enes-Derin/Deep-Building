@@ -7,336 +7,132 @@
     <title>İletişim - Deep İnşaat</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        .page-header {
-            background: linear-gradient(135deg, #131829 0%, #0a0e27 100%);
-            padding: 4rem var(--spacing-unit);
-            text-align: center;
-            color: var(--text-light);
-            margin-top: 70px;
-            border-bottom: 1px solid rgba(0, 217, 255, 0.1);
-        }
-
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-container {
-            padding: 4rem var(--spacing-unit);
-            background: linear-gradient(180deg, #131829 0%, #18202f 100%);
-            color: var(--text-light);
-        }
-
-        .contact-intro {
-            text-align: center;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            color: var(--text-light);
-        }
-
-        .contact-intro h2 {
-            font-size: 1.8rem;
-            background: linear-gradient(135deg, #00d9ff 0%, #b537f2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
-
-        .contact-intro p {
-            color: var(--text-muted);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .contact-form {
-            background: rgba(19, 24, 41, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 217, 255, 0.1), 0 0 20px rgba(0, 217, 255, 0.05);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: var(--text-light);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 0.95rem;
-            background: rgba(10, 14, 39, 0.6);
-            color: var(--text-light);
-            backdrop-filter: blur(5px);
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(139, 148, 165, 0.6);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-accent);
-            box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.2), 0 0 20px rgba(0, 217, 255, 0.3);
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .info-card {
-            background: rgba(19, 24, 41, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            border-left: 4px solid var(--primary-accent);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 217, 255, 0.1), 0 0 20px rgba(0, 217, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .info-card:hover {
-            border-color: rgba(0, 217, 255, 0.5);
-            box-shadow: 0 8px 32px rgba(0, 217, 255, 0.2), 0 0 30px rgba(0, 217, 255, 0.1);
-        }
-
-        .info-card i {
-            font-size: 1.8rem;
-            color: var(--primary-accent);
-            margin-bottom: 1rem;
-        }
-
-        .info-card h4 {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .info-card p {
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .info-card a {
-            color: var(--primary-accent);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .info-card a:hover {
-            color: var(--secondary-accent);
-            text-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
-        }
-
-        .success-message {
-            display: none;
-            background: rgba(0, 255, 159, 0.1);
-            border: 1px solid var(--success-accent);
-            color: var(--success-accent);
-            padding: 1rem;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 0.75rem;
-            background: linear-gradient(135deg, #00d9ff 0%, #b537f2 100%);
-            color: var(--dark-navy);
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
-
-        }
-
-        .submit-btn:hover {
-            box-shadow: 0 0 30px rgba(0, 217, 255, 0.5), 0 0 50px rgba(181, 55, 242, 0.3);
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Header/Navigation -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="building-animation"><i class="fas fa-building"></i></div>
+            <div class="loading-text">Yükleniyor...</div>
+        </div>
+    </div>
+
     <header class="header">
         <div class="container">
             <div class="nav-wrapper">
-                <div class="logo">
-                    <i class="fas fa-building"></i>
-                    <span>Deep İnşaat</span>
-                </div>
+                <div class="logo"><i class="fas fa-building"></i><span>Deep İnşaat</span></div>
                 <nav class="navbar">
                     <a href="index.html">Ana Sayfa</a>
                     <a href="hakkimizda.html">Hakkımızda</a>
                     <a href="hizmetler.html">Hizmetler</a>
                     <a href="projeler.html">Projeler</a>
-                    <a href="iletisim.html">İletişim</a>
-                    <a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a>
+                    <a href="iletisim.html" class="active">İletişim</a>
                 </nav>
-                <div class="mobile-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
+                <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
             </div>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <div class="page-header">
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
         <div class="container">
-            <h1>İletişim</h1>
-            <p>Projeniz hakkında konuşalım</p>
+            <h1 class="page-title">İletişim</h1>
+            <p class="page-subtitle">Projeniz hakkında konuşalım</p>
         </div>
-    </div>
+    </section>
 
-    <!-- Contact Container -->
-    <section class="contact-container">
+    <section class="contact-section">
         <div class="container">
             <div class="contact-intro">
                 <h2>Bize Ulaşın</h2>
-                <p>Projeniz hakkında sorularınız varsa veya teklif almak istiyorsanız,
-                    lütfen bize yazın. Ekibimiz en kısa sürede sizinle iletişime geçecektir.</p>
+                <p>Projeniz hakkında sorularınız varsa veya teklif almak istiyorsanız, lütfen bize yazın. Ekibimiz en
+                    kısa sürede sizinle iletişime geçecektir.</p>
             </div>
 
             <div class="contact-grid">
-                <!-- Contact Form -->
-                <div class="contact-form">
+                <div class="contact-form-wrapper">
                     <div class="success-message" id="successMessage">
-                        <i class="fas fa-check-circle"></i> Mesajınız başarıyla gönderildi. En kısa sürede dönüş
-                        yapacağız.
+                        <i class="fas fa-check-circle"></i> Mesajınız başarıyla gönderildi!
                     </div>
-
-                    <form id="contactForm">
+                    <form id="contactForm" class="contact-form">
                         <div class="form-group">
                             <label for="name">Adınız *</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" required>
                         </div>
-
                         <div class="form-group">
                             <label for="email">E-posta *</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" required>
                         </div>
-
                         <div class="form-group">
                             <label for="phone">Telefon</label>
-                            <input type="tel" id="phone" name="phone">
+                            <input type="tel" id="phone">
                         </div>
-
                         <div class="form-group">
                             <label for="subject">Konu *</label>
-                            <input type="text" id="subject" name="subject" required>
+                            <input type="text" id="subject" required>
                         </div>
-
                         <div class="form-group">
                             <label for="message">Mesaj *</label>
-                            <textarea id="message" name="message" required></textarea>
+                            <textarea id="message" rows="5" required></textarea>
                         </div>
-
                         <button type="submit" class="cta-button">Gönder</button>
                     </form>
                 </div>
 
-                <!-- Contact Info -->
                 <div class="contact-info">
                     <div class="info-card">
                         <i class="fas fa-map-marker-alt"></i>
                         <h4>Adres</h4>
-                        <p>İstanbul, Türkiye<br>Merkez Ofis: Maslak</p>
+                        <p>Maslak Mahallesi, Eski Büyükdere Cad.<br>No:23 Sarıyer/İstanbul</p>
                     </div>
-
                     <div class="info-card">
                         <i class="fas fa-phone"></i>
                         <h4>Telefon</h4>
-                        <p><a href="tel:+90212123456">+90 (212) 123 45 67</a><br>
-                            <a href="tel:+90212123456">+90 (212) 123 45 68</a>
-                        </p>
+                        <p><a href="tel:+902121234567">+90 (212) 123 45 67</a><br><a href="tel:+902121234568">+90 (212)
+                                123 45 68</a></p>
                     </div>
-
                     <div class="info-card">
                         <i class="fas fa-envelope"></i>
                         <h4>E-posta</h4>
-                        <p><a href="mailto:info@fixtrack.com">info@fixtrack.com</a><br>
-                            <a href="mailto:teklife@fixtrack.com">teklife@fixtrack.com</a>
-                        </p>
+                        <p><a href="mailto:info@deepinsaat.com.tr">info@deepinsaat.com.tr</a><br><a
+                                href="mailto:teklif@deepinsaat.com.tr">teklif@deepinsaat.com.tr</a></p>
                     </div>
-
                     <div class="info-card">
                         <i class="fas fa-clock"></i>
                         <h4>Çalışma Saatleri</h4>
-                        <p>Pazartesi - Cuma: 09:00 - 18:00<br>
-                            Cumartesi: 10:00 - 14:00<br>
-                            Pazar: Kapalı</p>
+                        <p>Pazartesi - Cuma: 09:00 - 18:00<br>Cumartesi: 10:00 - 14:00<br>Pazar: Kapalı</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Deep İnşaat</h4>
+                    <div class="footer-logo"><i class="fas fa-building"></i><span>Deep İnşaat</span></div>
                     <p>Güvenle yükselen yapılar için, planlı ve profesyonel inşaat hizmetleri.</p>
+                    <div class="footer-certificates">
+                        <div class="certificate-badge"><i class="fas fa-certificate"></i><span>ISO 9001</span></div>
+                        <div class="certificate-badge"><i class="fas fa-award"></i><span>TSE</span></div>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h4>Hızlı Linkler</h4>
                     <ul>
-                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                        <li><a href="hizmetler.html">Hizmetler</a></li>
-                        <li><a href="projeler.html">Projeler</a></li>
-                        <li><a href="iletisim.html">İletişim</a></li>
+                        <li><a href="hakkimizda.html"><i class="fas fa-angle-right"></i> Hakkımızda</a></li>
+                        <li><a href="hizmetler.html"><i class="fas fa-angle-right"></i> Hizmetler</a></li>
+                        <li><a href="projeler.html"><i class="fas fa-angle-right"></i> Projeler</a></li>
+                        <li><a href="iletisim.html"><i class="fas fa-angle-right"></i> İletişim</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>İletişim Bilgileri</h4>
-                    <p><i class="fas fa-phone"></i> +90 (212) 123 45 67</p>
-                    <p><i class="fas fa-envelope"></i> info@fixtrack.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
+                    <h4>İletişim</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-phone"></i><span>+90 (212) 123 45 67</span></li>
+                        <li><i class="fas fa-envelope"></i><span>info@deepinsaat.com.tr</span></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Sosyal Medya</h4>
@@ -348,16 +144,182 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Deep İnşaat. Tüm hakları saklıdır.</p>
+                <p>&copy; 2026 Deep İnşaat. Tüm hakları saklıdır.</p>
             </div>
         </div>
     </footer>
 
+    <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.9), rgba(19, 24, 41, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 8rem var(--spacing-unit) 5rem;
+            margin-top: 70px;
+            text-align: center
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9)
+        }
+
+        .contact-section {
+            padding: 6rem var(--spacing-unit);
+            background: linear-gradient(180deg, #131829 0%, #18202f 100%)
+        }
+
+        .contact-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem
+        }
+
+        .contact-intro h2 {
+            font-size: 2.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem
+        }
+
+        .contact-intro p {
+            color: var(--text-muted);
+            font-size: 1.1rem
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem
+        }
+
+        .contact-form-wrapper {
+            background: rgba(19, 24, 41, 0.6);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            backdrop-filter: blur(10px)
+        }
+
+        .success-message {
+            display: none;
+            background: rgba(0, 255, 159, 0.1);
+            border: 1px solid var(--success-accent);
+            color: var(--success-accent);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            text-align: center
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeInUp 0.3s ease
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-light)
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(10, 14, 39, 0.6);
+            color: var(--text-light);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.3s ease
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-accent);
+            box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.2)
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem
+        }
+
+        .info-card {
+            background: rgba(19, 24, 41, 0.6);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 217, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2)
+        }
+
+        .info-card i {
+            font-size: 2rem;
+            color: var(--primary-accent);
+            margin-bottom: 1rem
+        }
+
+        .info-card h4 {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem
+        }
+
+        .info-card p {
+            color: var(--text-muted);
+            line-height: 1.6
+        }
+
+        .info-card a {
+            color: var(--primary-accent);
+            transition: color 0.3s ease
+        }
+
+        .info-card a:hover {
+            color: var(--secondary-accent)
+        }
+
+        @media(max-width:768px) {
+            .contact-grid {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+
+    <script src="script.js"></script>
     <script>
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
-
-            // Get form data
             const formData = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
@@ -366,25 +328,15 @@
                 message: document.getElementById('message').value,
                 timestamp: new Date().toISOString()
             };
-
-            // Save to localStorage (simulating backend)
             let messages = JSON.parse(localStorage.getItem('contactMessages')) || [];
             messages.push(formData);
             localStorage.setItem('contactMessages', JSON.stringify(messages));
-
-            // Show success message
-            document.getElementById('successMessage').style.display = 'block';
-
-            // Reset form
+            const successMsg = document.getElementById('successMessage');
+            successMsg.classList.add('show');
             this.reset();
-
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                document.getElementById('successMessage').style.display = 'none';
-            }, 5000);
+            setTimeout(() => { successMsg.classList.remove('show') }, 5000);
         });
     </script>
-    <script src="script.js"></script>
 </body>
 
 </html>

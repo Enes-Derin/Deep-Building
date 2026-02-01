@@ -4,12 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deep İnşaat - Güvenle Yükselen Yapılar</title>
+    <meta name="description"
+        content="Deep İnşaat - Türkiye'nin önde gelen inşaat şirketlerinden. Konut, ticari ve endüstriyel projeler.">
+    <title>Deep İnşaat - Güvenle Yükselen Yapılar | Kurumsal İnşaat Şirketi</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="building-animation">
+                <i class="fas fa-building"></i>
+            </div>
+            <div class="loading-text">Yükleniyor...</div>
+        </div>
+    </div>
+
     <!-- Header/Navigation -->
     <header class="header">
         <div class="container">
@@ -19,12 +31,11 @@
                     <span>Deep İnşaat</span>
                 </div>
                 <nav class="navbar">
-                    <a href="#home">Ana Sayfa</a>
+                    <a href="index.html" class="active">Ana Sayfa</a>
                     <a href="hakkimizda.html">Hakkımızda</a>
                     <a href="hizmetler.html">Hizmetler</a>
                     <a href="projeler.html">Projeler</a>
                     <a href="iletisim.html">İletişim</a>
-                    <a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a>
                 </nav>
                 <div class="mobile-toggle">
                     <i class="fas fa-bars"></i>
@@ -35,46 +46,155 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-overlay"></div>
+        <div class="hero-slider">
+            <div class="hero-slide active"
+                style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80');">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide"
+                style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80');">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-slide"
+                style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80');">
+                <div class="hero-overlay"></div>
+            </div>
+        </div>
+
         <div class="hero-content">
-            <h1>Güvenle Yükselen Yapılar</h1>
-            <p>Planlı, zamanında ve kaliteli inşaat çözümleri</p>
-            <a href="iletisim.html" class="cta-button">Proje Teklifi Al</a>
+            <div class="hero-badge fade-in-up">
+                <i class="fas fa-award"></i> 20+ Yıllık Tecrübe
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line slide-in-left">Güvenle Yükselen</span>
+                <span class="title-line highlight slide-in-right">Yapılar</span>
+            </h1>
+            <p class="hero-subtitle fade-in-up delay-1">
+                Türkiye'nin önde gelen inşaat şirketlerinden biri olarak,<br>
+                konut, ticari ve endüstriyel projelerde mükemmel hizmet sunuyoruz
+            </p>
+            <div class="hero-buttons fade-in-up delay-2">
+                <a href="iletisim.html" class="cta-button">
+                    <i class="fas fa-rocket"></i> Proje Teklifi Al
+                </a>
+                <a href="projeler.html" class="cta-button white">
+                    <i class="fas fa-images"></i> Projelerimizi Keşfet
+                </a>
+            </div>
+            <div class="hero-stats fade-in-up delay-3">
+                <div class="stat-item">
+                    <div class="stat-number counter" data-target="150">0</div>
+                    <div class="stat-label">Tamamlanan Proje</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number counter" data-target="5000">0</div>
+                    <div class="stat-label">Mutlu Müşteri</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number counter" data-target="99">0</div>
+                    <div class="stat-label">% Memnuniyet</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+
+        <div class="slider-controls">
+            <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="partners-content">
+                <p class="partners-title">Güvenilir İş Ortaklarımız</p>
+                <div class="partners-logos">
+                    <div class="partner-logo">İstanbul Büyükşehir Belediyesi</div>
+                    <div class="partner-logo">TOKİ</div>
+                    <div class="partner-logo">Emlak Konut GYO</div>
+                    <div class="partner-logo">Zorlu Holding</div>
+                    <div class="partner-logo">Doğuş Grubu</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <h2>Hizmetlerimiz</h2>
+            <div class="section-header">
+                <span class="section-tag">Hizmetlerimiz</span>
+                <h2>Sunduğumuz Profesyonel Çözümler</h2>
+                <p>Her ölçekte projeye özel, kaliteli ve zamanında inşaat hizmetleri</p>
+            </div>
+
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-home"></i>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80');">
                     </div>
-                    <h3>Konut Projeleri</h3>
-                    <p>Yaşamak için tasarlanan, kalite ve rahatın bir araya geldiği konut projelerinde uzmanız.</p>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Konut Projeleri</h3>
+                        <p>Yaşamak için tasarlanan, kalite ve rahatın bir araya geldiği modern konut projelerinde
+                            uzmanız. Villa, apartman ve toplu konut projeleri.</p>
+                        <a href="hizmetler.html" class="service-link">Detayları Gör <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-city"></i>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80');">
                     </div>
-                    <h3>Ticari Yapılar</h3>
-                    <p>İşletme ihtiyaçlarına göre tasarlanan, işlevsel ve modern ticari yapılar inşa ediyoruz.</p>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <h3>Ticari Yapılar</h3>
+                        <p>İşletme ihtiyaçlarına göre tasarlanan, işlevsel ve modern ticari yapılar inşa ediyoruz. Ofis,
+                            plaza ve AVM projeleri.</p>
+                        <a href="hizmetler.html" class="service-link">Detayları Gör <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-handshake"></i>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80');">
                     </div>
-                    <h3>Taahhüt Hizmetleri</h3>
-                    <p>Başkasının projesini üstlenerek, zamanında ve standartlara uygun teslim garantisiyiz.</p>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Taahhüt Hizmetleri</h3>
+                        <p>Kamu ve özel sektör projelerinde profesyonel taahhüt hizmetleri. Zamanında teslim ve
+                            standartlara uygun yapım garantisi.</p>
+                        <a href="hizmetler.html" class="service-link">Detayları Gör <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80');">
                     </div>
-                    <h3>Proje Danışmanlığı</h3>
-                    <p>Feasibility çalışmalarından detaylı tasarıma kadar, her aşamada profesyonel danışmanlık.</p>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Proje Danışmanlığı</h3>
+                        <p>Feasibility çalışmalarından detaylı tasarıma kadar, her aşamada profesyonel danışmanlık ve
+                            teknik destek hizmetleri.</p>
+                        <a href="hizmetler.html" class="service-link">Detayları Gör <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -83,88 +203,239 @@
     <!-- Why Us Section -->
     <section class="why-us">
         <div class="container">
-            <h2>Neden Deep İnşaat?</h2>
+            <div class="section-header">
+                <span class="section-tag">Neden Biz?</span>
+                <h2>Deep İnşaat'ı Tercih Etme Nedenleri</h2>
+                <p>Sektörde 20 yılı aşkın deneyimimiz ve binlerce mutlu müşterimizle</p>
+            </div>
+
             <div class="why-us-grid">
                 <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
                     <div class="why-number">1</div>
                     <h4>Zamanında Teslim</h4>
-                    <p>Belirlenen zaman çizelgesine uyarak, hiçbir gecikmesiz proje teslimi yapıyoruz.</p>
+                    <p>Belirlenen zaman çizelgesine uyarak, hiçbir gecikmesiz proje teslimi yapıyoruz. %99 zamanında
+                        teslim oranı.</p>
                 </div>
+
                 <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
                     <div class="why-number">2</div>
                     <h4>Şeffaf Süreç</h4>
-                    <p>Her aşamada siz haberdar olursunuz. Maliyetler ve ilerleme durumu tamamen açık.</p>
+                    <p>Her aşamada siz haberdar olursunuz. Maliyetler ve ilerleme durumu tamamen açık ve raporlanabilir.
+                    </p>
                 </div>
+
                 <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
                     <div class="why-number">3</div>
                     <h4>Deneyimli Ekip</h4>
-                    <p>Mühendisler, mimarlar ve şantiye şefleriyle 20+ yıllık tecrübe.</p>
+                    <p>Mühendisler, mimarlar ve şantiye şefleriyle 20+ yıllık tecrübe. Sürekli eğitim alan profesyonel
+                        kadro.</p>
                 </div>
+
                 <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
                     <div class="why-number">4</div>
-                    <h4>Referans Odaklı</h4>
-                    <p>Müşteri memnuniyeti ve kalite, tüm çalışmalarımızın temelini oluşturur.</p>
+                    <h4>Kalite Garantisi</h4>
+                    <p>ISO 9001 sertifikalı üretim. Müşteri memnuniyeti ve kalite, tüm çalışmalarımızın temelini
+                        oluşturur.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Projects Section -->
+    <!-- Featured Projects -->
     <section class="featured-projects">
         <div class="container">
-            <h2>Öne Çıkan Projeler</h2>
+            <div class="section-header">
+                <span class="section-tag">Portföyümüz</span>
+                <h2>Öne Çıkan Projelerimiz</h2>
+                <p>Başarıyla tamamladığımız projelerden bazıları</p>
+            </div>
+
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image" style="background-color: #ddd;">
-                        <i class="fas fa-image"></i>
+                    <div class="project-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80');">
+                        <div class="project-overlay">
+                            <span class="project-category"><i class="fas fa-home"></i> Konut</span>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h4>Bahçelievler Konut Sitesi</h4>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> İstanbul</p>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> İstanbul, Bahçelievler</p>
                         <p class="description">15 blok, 450 daire, modern mimari ve yeşil alanlarla zenginleştirilmiş
                             konut projesi.</p>
-                        <a href="#" class="read-more">Detayları Gör →</a>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>45,000 m²</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>2021-2023</span>
+                            </div>
+                        </div>
+                        <a href="projeler.html" class="read-more">Detayları Gör <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+
                 <div class="project-card">
-                    <div class="project-image" style="background-color: #ccc;">
-                        <i class="fas fa-image"></i>
+                    <div class="project-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1577495508048-b635879837f1?w=800&q=80');">
+                        <div class="project-overlay">
+                            <span class="project-category"><i class="fas fa-building"></i> Ticari</span>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h4>Ankara İş Merkezi</h4>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> Ankara</p>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Ankara, Çankaya</p>
                         <p class="description">A+ sınıfı ofis alanları, ticari birimleri ve yüksek teknoloji
                             altyapısıyla donatılmış yapı.</p>
-                        <a href="#" class="read-more">Detayları Gör →</a>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>25,000 m²</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>2022-2024</span>
+                            </div>
+                        </div>
+                        <a href="projeler.html" class="read-more">Detayları Gör <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+
                 <div class="project-card">
-                    <div class="project-image" style="background-color: #bbb;">
-                        <i class="fas fa-image"></i>
+                    <div class="project-image"
+                        style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80');">
+                        <div class="project-overlay">
+                            <span class="project-category"><i class="fas fa-home"></i> Konut</span>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h4>Alsancak Rezidansı</h4>
-                        <p class="location"><i class="fas fa-map-marker-alt"></i> İzmir</p>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> İzmir, Alsancak</p>
                         <p class="description">Deniz manzaralı, lüks villa projesi, özel mimarisi ve premium
                             özellikleriyle öne çıkıyor.</p>
-                        <a href="#" class="read-more">Detayları Gör →</a>
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>12,500 m²</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>2020-2022</span>
+                            </div>
+                        </div>
+                        <a href="projeler.html" class="read-more">Detayları Gör <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="projects-footer">
-                <a href="projeler.html" class="secondary-button">Tüm Projeleri Gör</a>
+                <a href="projeler.html" class="secondary-button">
+                    <i class="fas fa-th-large"></i> Tüm Projeleri Gör
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Referanslar</span>
+                <h2>Müşterilerimiz Ne Diyor?</h2>
+                <p>Bizimle çalışan firmaların deneyimleri</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Deep İnşaat ile çalışmak harikaydı. Projemiz belirlenen sürede ve
+                        bütçede tamamlandı. Profesyonel yaklaşımları ve kaliteli işçilikleri için teşekkür ederiz."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h5>Mehmet Yılmaz</h5>
+                            <p>Genel Müdür, Yılmaz Holding</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"İlk projemizden bu yana Deep İnşaat ile çalışıyoruz. Her zaman
+                        zamanında teslim, şeffaf süreç ve mükemmel iletişim. Kesinlikle tavsiye ederim."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h5>Ayşe Demir</h5>
+                            <p>Yönetim Kurulu Başkanı, Demir Yapı</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Deneyimli ekibi ve kaliteli malzeme kullanımı sayesinde hayalimiz
+                        gerçek oldu. Villa projemiz kusursuz şekilde tamamlandı."</p>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h5>Can Özkan</h5>
+                            <p>Villa Sahibi</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
+        <div class="cta-background"
+            style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80');">
+        </div>
+        <div class="cta-overlay"></div>
         <div class="container">
             <div class="cta-box">
                 <h2>Projeniz için Güvenilir Bir Çözüm Ortağı mı Arıyorsunuz?</h2>
                 <p>Vizyonunuzu gerçeğe dönüştürmek için bize ulaşın. Profesyonel ekibimiz, projenizi başarıya taşımaya
                     hazır.</p>
-                <a href="iletisim.html" class="cta-button">Bizimle İletişime Geçin</a>
+                <div class="cta-buttons">
+                    <a href="iletisim.html" class="cta-button">
+                        <i class="fas fa-phone"></i> Bizimle İletişime Geçin
+                    </a>
+                    <a href="tel:+902121234567" class="cta-button white">
+                        <i class="fas fa-phone-volume"></i> (0212) 123 45 67
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -174,38 +445,86 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Deep İnşaat</h4>
-                    <p>Güvenle yükselen yapılar için, planlı ve profesyonel inşaat hizmetleri.</p>
+                    <div class="footer-logo">
+                        <i class="fas fa-building"></i>
+                        <span>Deep İnşaat</span>
+                    </div>
+                    <p>Güvenle yükselen yapılar için, planlı ve profesyonel inşaat hizmetleri. 20+ yıllık tecrübe ile
+                        yanınızdayız.</p>
+                    <div class="footer-certificates">
+                        <div class="certificate-badge">
+                            <i class="fas fa-certificate"></i>
+                            <span>ISO 9001</span>
+                        </div>
+                        <div class="certificate-badge">
+                            <i class="fas fa-award"></i>
+                            <span>TSE</span>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="footer-section">
                     <h4>Hızlı Linkler</h4>
                     <ul>
-                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                        <li><a href="hizmetler.html">Hizmetler</a></li>
-                        <li><a href="projeler.html">Projeler</a></li>
-                        <li><a href="iletisim.html">İletişim</a></li>
+                        <li><a href="hakkimizda.html"><i class="fas fa-angle-right"></i> Hakkımızda</a></li>
+                        <li><a href="hizmetler.html"><i class="fas fa-angle-right"></i> Hizmetler</a></li>
+                        <li><a href="projeler.html"><i class="fas fa-angle-right"></i> Projeler</a></li>
+                        <li><a href="iletisim.html"><i class="fas fa-angle-right"></i> İletişim</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-section">
                     <h4>İletişim Bilgileri</h4>
-                    <p><i class="fas fa-phone"></i> +90 (212) 123 45 67</p>
-                    <p><i class="fas fa-envelope"></i> info@fixtrack.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Maslak Mahallesi, Eski Büyükdere Cad.<br>No:23 Sarıyer/İstanbul</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+90 (212) 123 45 67</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@deepinsaat.com.tr</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Pzt-Cum: 09:00 - 18:00</span>
+                        </li>
+                    </ul>
                 </div>
+
                 <div class="footer-section">
-                    <h4>Sosyal Medya</h4>
+                    <h4>Bizi Takip Edin</h4>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h5>Bültenimize Katılın</h5>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="E-posta adresiniz" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Deep İnşaat. Tüm hakları saklıdır.</p>
+                <p>&copy; 2026 Deep İnşaat. Tüm hakları saklıdır. | <a href="#">Gizlilik Politikası</a> | <a
+                        href="#">Kullanım Koşulları</a></p>
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>

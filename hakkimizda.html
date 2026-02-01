@@ -7,134 +7,20 @@
     <title>Hakkımızda - Deep İnşaat</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        .page-header {
-            background: linear-gradient(135deg, #131829 0%, #0a0e27 100%);
-            padding: 4rem var(--spacing-unit);
-            text-align: center;
-            color: var(--text-light);
-            margin-top: 70px;
-            border-bottom: 1px solid rgba(0, 217, 255, 0.1);
-        }
-
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .about-content {
-            padding: 4rem var(--spacing-unit);
-            background: linear-gradient(180deg, #131829 0%, #18202f 100%);
-            color: var(--text-light);
-        }
-
-        .about-intro {
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            text-align: center;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-muted);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-            text-align: center;
-        }
-
-        .stat-card {
-            background: rgba(19, 24, 41, 0.6);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #00d9ff 0%, #b537f2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        .team-section {
-            background: linear-gradient(180deg, #18202f 0%, #131829 100%);
-            padding: 4rem var(--spacing-unit);
-            margin-top: 3rem;
-            border-top: 1px solid rgba(255, 0, 110, 0.1);
-        }
-
-        .team-section h2 {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--text-light);
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .team-member {
-            background: rgba(19, 24, 41, 0.6);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(181, 55, 242, 0.1);
-            text-align: center;
-            border: 1px solid rgba(181, 55, 242, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .member-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #131829 0%, #18202f 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: rgba(181, 55, 242, 0.2);
-            border-bottom: 1px solid rgba(181, 55, 242, 0.1);
-        }
-
-        .member-name {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-light);
-            margin-bottom: 0.3rem;
-        }
-
-        .member-title {
-            font-size: 0.9rem;
-            color: var(--primary-accent);
-            margin-bottom: 0.5rem;
-        }
-
-        .member-bio {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Header/Navigation -->
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="building-animation">
+                <i class="fas fa-building"></i>
+            </div>
+            <div class="loading-text">Yükleniyor...</div>
+        </div>
+    </div>
+
+    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="nav-wrapper">
@@ -144,11 +30,10 @@
                 </div>
                 <nav class="navbar">
                     <a href="index.html">Ana Sayfa</a>
-                    <a href="hakkimizda.html">Hakkımızda</a>
+                    <a href="hakkimizda.html" class="active">Hakkımızda</a>
                     <a href="hizmetler.html">Hizmetler</a>
                     <a href="projeler.html">Projeler</a>
                     <a href="iletisim.html">İletişim</a>
-                    <a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Admin</a>
                 </nav>
                 <div class="mobile-toggle">
                     <i class="fas fa-bars"></i>
@@ -158,58 +43,60 @@
     </header>
 
     <!-- Page Header -->
-    <div class="page-header">
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
         <div class="container">
-            <h1>Hakkımızda</h1>
-            <p>20+ Yıllık Deneyim, Binlerce Mutlu Müşteri</p>
+            <h1 class="page-title">Hakkımızda</h1>
+            <p class="page-subtitle">20+ Yıllık Deneyim, Binlerce Mutlu Müşteri</p>
         </div>
-    </div>
+    </section>
 
-    <!-- About Content -->
-    <section class="about-content">
+    <!-- About Section -->
+    <section class="about-section">
         <div class="container">
             <div class="about-intro">
-                <p>
-                    Deep İnşaat, konut ve ticari yapı projelerinde planlama, uygulama ve teslim süreçlerini
-                    profesyonel şekilde yürüten bir inşaat firmasıdır. Kalite, güven ve sürdürülebilirlik
-                    temel çalışma prensiplerimizdir.
-                </p>
+                <p>Deep İnşaat, konut ve ticari yapı projelerinde planlama, uygulama ve teslim süreçlerini profesyonel
+                    şekilde yürüten bir inşaat firmasıdır. Kalite, güven ve sürdürülebilirlik temel çalışma
+                    prensiplerimizdir.</p>
             </div>
 
             <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">20+</div>
+                <div class="stat-box">
+                    <div class="stat-number counter" data-target="20">0</div>
                     <div class="stat-label">Yıllık Deneyim</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">150+</div>
+                <div class="stat-box">
+                    <div class="stat-number counter" data-target="150">0</div>
                     <div class="stat-label">Tamamlanan Proje</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">5000+</div>
+                <div class="stat-box">
+                    <div class="stat-number counter" data-target="5000">0</div>
                     <div class="stat-label">Mutlu Müşteri</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">99%</div>
-                    <div class="stat-label">Zamanında Teslim</div>
+                <div class="stat-box">
+                    <div class="stat-number counter" data-target="99">0</div>
+                    <div class="stat-label">% Zamanında Teslim</div>
                 </div>
             </div>
 
-            <div class="about-intro" style="margin-top: 3rem;">
-                <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">Vizyonumuz</h2>
-                <p>
-                    Türkiye'nin en güvenilir ve profesyonel inşaat firması olmak. Her projede kaliteyi
-                    ödün vermeden, zamanında ve şeffaf bir süreçle müşteri memnuniyeti sağlamak.
-                </p>
-            </div>
-
-            <div class="about-intro" style="margin-top: 2rem;">
-                <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">Misyonumuz</h2>
-                <p>
-                    İnşaat sektöründe "güven" kelimesinin gerçek anlamını kanıtlamak. Müşterilerimizin
-                    hayallerini somut yapılara dönüştürürken, kaliteli işçilik, etik davranış ve
-                    zamanında teslim söz vermek.
-                </p>
+            <div class="vision-mission">
+                <div class="vm-card">
+                    <div class="vm-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Vizyonumuz</h3>
+                    <p>Türkiye'nin en güvenilir ve profesyonel inşaat firması olmak. Her projede kaliteyi ödün vermeden,
+                        zamanında ve şeffaf bir süreçle müşteri memnuniyeti sağlamak.</p>
+                </div>
+                <div class="vm-card">
+                    <div class="vm-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Misyonumuz</h3>
+                    <p>İnşaat sektöründe "güven" kelimesinin gerçek anlamını kanıtlamak. Müşterilerimizin hayallerini
+                        somut yapılara dönüştürürken, kaliteli işçilik, etik davranış ve zamanında teslim söz vermek.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -217,16 +104,21 @@
     <!-- Team Section -->
     <section class="team-section">
         <div class="container">
-            <h2>Liderlik Ekibimiz</h2>
+            <div class="section-header">
+                <span class="section-tag">Ekibimiz</span>
+                <h2>Liderlik Ekibimiz</h2>
+                <p>Profesyonel ve deneyimli kadromuz</p>
+            </div>
+
             <div class="team-grid">
                 <div class="team-member">
                     <div class="member-image">
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="member-info">
-                        <div class="member-name">Ahmet Demirci</div>
-                        <div class="member-title">Genel Müdür</div>
-                        <div class="member-bio">20+ yıl inşaat deneyimi, İnşaat Mühendisi (İTÜ)</div>
+                        <h4>Ahmet Demirci</h4>
+                        <p class="member-title">Genel Müdür</p>
+                        <p class="member-bio">20+ yıl inşaat deneyimi, İnşaat Mühendisi (İTÜ)</p>
                     </div>
                 </div>
 
@@ -235,9 +127,9 @@
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="member-info">
-                        <div class="member-name">Fatih Kaya</div>
-                        <div class="member-title">Proje Müdürü</div>
-                        <div class="member-bio">Teknik ve yönetim alanında 15+ yıl tecrübe</div>
+                        <h4>Fatih Kaya</h4>
+                        <p class="member-title">Proje Müdürü</p>
+                        <p class="member-bio">Teknik ve yönetim alanında 15+ yıl tecrübe</p>
                     </div>
                 </div>
 
@@ -246,9 +138,9 @@
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="member-info">
-                        <div class="member-name">Zeynep Arslan</div>
-                        <div class="member-title">Mühendislik Müdürü</div>
-                        <div class="member-bio">Makina Mühendisi, kalite kontrol ve AR-GE</div>
+                        <h4>Zeynep Arslan</h4>
+                        <p class="member-title">Mühendislik Müdürü</p>
+                        <p class="member-bio">Makina Mühendisi, kalite kontrol ve AR-GE</p>
                     </div>
                 </div>
             </div>
@@ -260,38 +152,298 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>Deep İnşaat</h4>
-                    <p>Güvenle yükselen yapılar için, planlı ve profesyonel inşaat hizmetleri.</p>
+                    <div class="footer-logo">
+                        <i class="fas fa-building"></i>
+                        <span>Deep İnşaat</span>
+                    </div>
+                    <p>Güvenle yükselen yapılar için, planlı ve profesyonel inşaat hizmetleri. 20+ yıllık tecrübe ile
+                        yanınızdayız.</p>
+                    <div class="footer-certificates">
+                        <div class="certificate-badge">
+                            <i class="fas fa-certificate"></i>
+                            <span>ISO 9001</span>
+                        </div>
+                        <div class="certificate-badge">
+                            <i class="fas fa-award"></i>
+                            <span>TSE</span>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="footer-section">
                     <h4>Hızlı Linkler</h4>
                     <ul>
-                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                        <li><a href="hizmetler.html">Hizmetler</a></li>
-                        <li><a href="projeler.html">Projeler</a></li>
-                        <li><a href="iletisim.html">İletişim</a></li>
+                        <li><a href="hakkimizda.html"><i class="fas fa-angle-right"></i> Hakkımızda</a></li>
+                        <li><a href="hizmetler.html"><i class="fas fa-angle-right"></i> Hizmetler</a></li>
+                        <li><a href="projeler.html"><i class="fas fa-angle-right"></i> Projeler</a></li>
+                        <li><a href="iletisim.html"><i class="fas fa-angle-right"></i> İletişim</a></li>
                     </ul>
                 </div>
+
                 <div class="footer-section">
                     <h4>İletişim Bilgileri</h4>
-                    <p><i class="fas fa-phone"></i> +90 (212) 123 45 67</p>
-                    <p><i class="fas fa-envelope"></i> info@fixtrack.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Maslak Mahallesi, Eski Büyükdere Cad.<br>No:23 Sarıyer/İstanbul</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+90 (212) 123 45 67</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@deepinsaat.com.tr</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Pzt-Cum: 09:00 - 18:00</span>
+                        </li>
+                    </ul>
                 </div>
+
                 <div class="footer-section">
-                    <h4>Sosyal Medya</h4>
+                    <h4>Bizi Takip Edin</h4>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h5>Bültenimize Katılın</h5>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="E-posta adresiniz" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2024 Deep İnşaat. Tüm hakları saklıdır.</p>
+                <p>&copy; 2026 Deep İnşaat. Tüm hakları saklıdır. | <a href="#">Gizlilik Politikası</a> | <a
+                        href="#">Kullanım Koşulları</a></p>
             </div>
         </div>
     </footer>
+
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <style>
+        .page-hero {
+            background: linear-gradient(135deg, rgba(10, 14, 39, 0.9), rgba(19, 24, 41, 0.9)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 8rem var(--spacing-unit) 5rem;
+            margin-top: 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(181, 55, 242, 0.1));
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        .about-section {
+            padding: 6rem var(--spacing-unit);
+            background: linear-gradient(180deg, #131829 0%, #18202f 100%);
+        }
+
+        .about-intro {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .stat-box {
+            background: rgba(19, 24, 41, 0.6);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 217, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
+        }
+
+        .stat-box .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-box .stat-label {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .vision-mission {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .vm-card {
+            background: rgba(19, 24, 41, 0.6);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .vm-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 217, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
+        }
+
+        .vm-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 24px rgba(0, 217, 255, 0.3);
+        }
+
+        .vm-card h3 {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .vm-card p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .team-section {
+            padding: 6rem var(--spacing-unit);
+            background: rgba(19, 24, 41, 0.4);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .team-member {
+            background: rgba(19, 24, 41, 0.6);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 217, 255, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
+        }
+
+        .member-image {
+            height: 250px;
+            background: linear-gradient(135deg, #131829, #18202f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(0, 217, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+        }
+
+        .member-info {
+            padding: 2rem;
+        }
+
+        .member-info h4 {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-title {
+            color: var(--primary-accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .member-bio {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5rem;
+            }
+
+            .vision-mission {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
     <script src="script.js"></script>
 </body>

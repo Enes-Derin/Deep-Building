@@ -451,31 +451,183 @@ function initMagneticButtons() {
 }
 
 // ===== HORIZONTAL SCROLL (drag) =====
-function initHorizontalScroll() {
-    document.querySelectorAll('.hscroll-track-wrap').forEach(wrap => {
-        let isDown = false, startX, scrollLeft;
+/* ===== CAROUSEL — Script.js'e ekleyin (eski initHorizontalScroll'u silin) ===== */
+function initCarousel() {
+    document.querySelectorAll('.hscroll-section').forEach(section => {
+        const track = section.querySelector('.hscroll-track');
+        const cards = section.querySelectorAll('.hscroll-card');
+        const btnPrev = section.querySelector('.hscroll-btn-prev');
+        const btnNext = section.querySelector('.hscroll-btn-next');
+        const dotsWrap = section.querySelector('.hscroll-dots');
+        const counter = section.querySelector('.hscroll-counter');
+        const progFill = section.querySelector('.hscroll-progress-fill');
+        const autoBtn = section.querySelector('.hscroll-autoplay-btn');
 
-        wrap.addEventListener('mousedown', e => {
-            isDown = true;
-            wrap.classList.add('active');
-            startX = e.pageX - wrap.offsetLeft;
-            scrollLeft = wrap.scrollLeft;
+        if (!track || !cards.length) return;
+
+        const total = cards.length;
+        let current = 0;
+        let autoplay = true;
+        let autoTimer = null;
+        let progTimer = null;
+        let progVal = 0;
+        const INTERVAL = 4000;
+
+        /* --- Dots oluştur --- */
+        if (dotsWrap) {
+            cards.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = 'hscroll-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', `Proje ${i + 1}`);
+                dot.addEventListener('click', () => goTo(i));
+                dotsWrap.appendChild(dot);
+            });
+        }
+
+        /* --- Kart genişliği hesapla --- */
+        function cardW() {
+            const card = cards[0];
+            const style = getComputedStyle(track);
+            const gap = parseFloat(style.gap) || 24;
+            return card.getBoundingClientRect().width + gap;
+        }
+
+        /* --- goTo --- */
+        function goTo(idx, animate = true) {
+            current = ((idx % total) + total) % total;
+
+            /* Transform */
+            const offset = current * cardW();
+            track.style.transition = animate
+                ? 'transform 0.65s cubic-bezier(0.4,0,0.2,1)'
+                : 'none';
+            track.style.transform = `translateX(-${offset}px)`;
+
+            /* Aktif kart */
+            cards.forEach((c, i) => c.classList.toggle('active', i === current));
+
+            /* Dots */
+            if (dotsWrap) {
+                dotsWrap.querySelectorAll('.hscroll-dot').forEach((d, i) =>
+                    d.classList.toggle('active', i === current)
+                );
+            }
+
+            /* Counter */
+            if (counter) {
+                counter.innerHTML =
+                    `<strong>${String(current + 1).padStart(2, '0')}</strong> / ${String(total).padStart(2, '0')}`;
+            }
+
+            /* Ok butonları */
+            if (btnPrev) btnPrev.disabled = false;
+            if (btnNext) btnNext.disabled = false;
+
+            /* Progress sıfırla */
+            resetProgress();
+        }
+
+        /* --- Progress bar --- */
+        function resetProgress() {
+            clearInterval(progTimer);
+            progVal = 0;
+            if (progFill) progFill.style.width = '0%';
+            if (!autoplay) return;
+            const step = 50;
+            progTimer = setInterval(() => {
+                progVal += (step / INTERVAL) * 100;
+                if (progFill) progFill.style.width = progVal + '%';
+                if (progVal >= 100) clearInterval(progTimer);
+            }, step);
+        }
+
+        /* --- Autoplay --- */
+        function startAuto() {
+            clearInterval(autoTimer);
+            if (!autoplay) return;
+            autoTimer = setInterval(() => goTo(current + 1), INTERVAL);
+            resetProgress();
+        }
+        function stopAuto() {
+            clearInterval(autoTimer);
+            clearInterval(progTimer);
+        }
+        function toggleAuto() {
+            autoplay = !autoplay;
+            if (autoBtn) {
+                autoBtn.innerHTML = autoplay
+                    ? '<i class="fas fa-pause"></i>'
+                    : '<i class="fas fa-play"></i>';
+            }
+            autoplay ? startAuto() : stopAuto();
+        }
+
+        /* --- Butonlar --- */
+        if (btnPrev) btnPrev.addEventListener('click', () => { stopAuto(); goTo(current - 1); startAuto(); });
+        if (btnNext) btnNext.addEventListener('click', () => { stopAuto(); goTo(current + 1); startAuto(); });
+        if (autoBtn) autoBtn.addEventListener('click', toggleAuto);
+
+        /* --- Klavye navigasyonu --- */
+        section.setAttribute('tabindex', '0');
+        section.addEventListener('keydown', e => {
+            if (e.key === 'ArrowLeft') { stopAuto(); goTo(current - 1); startAuto(); }
+            if (e.key === 'ArrowRight') { stopAuto(); goTo(current + 1); startAuto(); }
         });
-        wrap.addEventListener('mouseleave', () => {
-            isDown = false; wrap.classList.remove('active');
+
+        /* --- Touch / swipe --- */
+        let touchStartX = 0, touchStartY = 0;
+        section.addEventListener('touchstart', e => {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+        section.addEventListener('touchend', e => {
+            const dx = e.changedTouches[0].clientX - touchStartX;
+            const dy = e.changedTouches[0].clientY - touchStartY;
+            if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+                stopAuto();
+                goTo(dx < 0 ? current + 1 : current - 1);
+                startAuto();
+            }
+        }, { passive: true });
+
+        /* --- Mouse drag (masaüstü) --- */
+        let dragStart = 0, isDragging = false;
+        track.addEventListener('mousedown', e => {
+            isDragging = true; dragStart = e.clientX;
+            track.style.transition = 'none';
         });
-        wrap.addEventListener('mouseup', () => {
-            isDown = false; wrap.classList.remove('active');
+        window.addEventListener('mouseup', e => {
+            if (!isDragging) return;
+            isDragging = false;
+            const dx = e.clientX - dragStart;
+            if (Math.abs(dx) > 60) {
+                stopAuto(); goTo(dx < 0 ? current + 1 : current - 1); startAuto();
+            } else {
+                goTo(current); // snap back
+            }
         });
-        wrap.addEventListener('mousemove', e => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - wrap.offsetLeft;
-            const walk = (x - startX) * 1.4;
-            wrap.scrollLeft = scrollLeft - walk;
+        window.addEventListener('mousemove', e => {
+            if (!isDragging) return;
+            const dx = e.clientX - dragStart;
+            const offset = current * cardW() - dx * 0.6;
+            track.style.transform = `translateX(-${offset}px)`;
         });
+
+        /* --- Hover'da dur --- */
+        section.addEventListener('mouseenter', stopAuto);
+        section.addEventListener('mouseleave', () => { if (autoplay) startAuto(); });
+
+        /* --- Resize --- */
+        window.addEventListener('resize', () => goTo(current, false));
+
+        /* --- Init --- */
+        goTo(0, false);
+        startAuto();
     });
 }
+
+// DOMContentLoaded içinde çağrın:
+// initCarousel();
 
 // ===== FLOATING CONTACT BUTTON =====
 function initFloatContact() {
@@ -557,9 +709,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initGoldDividers();
     initHeroParallax();
     initMagneticButtons();
-    initHorizontalScroll();
     initFloatContact();
     initMasonry();
     initImageReveal();
     initDarkEdges();
+    initCarousel();
 });

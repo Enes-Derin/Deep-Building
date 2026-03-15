@@ -179,87 +179,128 @@
     </section>
     <div class="gold-divider"></div>
     <!-- Portfolio -->
-    <section class="portfolio-section section">
-        <div class="wrap">
-            <div class="sh center reveal">
+    <section class="hscroll-section" aria-label="Öne Çıkan Projeler">
+        <div class="hscroll-header">
+            <div class="sh reveal">
                 <div class="sh-tag">Portföyümüz</div>
-                <h2 class="sh-title">Öne Çıkan <em>Projeler</em></h2>
-                <p class="sh-desc">Türkiye'nin dört bir yanında hayata geçirdiğimiz prestijli eserlerden seçmeler.</p>
+                <h2 class="sh-title">Seçkin <em>Projeler</em></h2>
             </div>
-            <div class="portfolio-grid">
-                <div class="port-item reveal">
-                    <div class="port-img"
-                        style="background-image:url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80')">
-                    </div>
-                    <div class="port-overlay">
-                        <div>
-                            <div class="port-cat">Lüks Konut</div>
-                            <h3 class="port-h3">Nişantaşı Residence</h3>
-                            <p class="port-loc"><i class="fas fa-map-marker-alt"></i> İstanbul, Şişli</p>
-                        </div>
-                    </div>
-                    <a href="projeler.html" class="port-arrow"><i class="fas fa-arrow-right"></i></a>
+            <!-- Ok butonları + sayaç -->
+            <div class="hscroll-nav">
+                <button class="hscroll-btn hscroll-btn-prev" aria-label="Önceki">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <div class="hscroll-counter">
+                    <strong>01</strong> / 06
                 </div>
-                <div class="port-item reveal reveal-delay-1">
-                    <div class="port-img"
-                        style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80')">
-                    </div>
-                    <div class="port-overlay">
-                        <div>
-                            <div class="port-cat">Ticari</div>
-                            <h3 class="port-h3">Levent Business Plaza</h3>
-                            <p class="port-loc"><i class="fas fa-map-marker-alt"></i> İstanbul, Beşiktaş</p>
-                        </div>
-                    </div>
-                    <a href="projeler.html" class="port-arrow"><i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="port-item reveal reveal-delay-1">
-                    <div class="port-img"
-                        style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80')">
-                    </div>
-                    <div class="port-overlay">
-                        <div>
-                            <div class="port-cat">Villa</div>
-                            <h3 class="port-h3">Bodrum Sunset Villas</h3>
-                            <p class="port-loc"><i class="fas fa-map-marker-alt"></i> Muğla, Bodrum</p>
-                        </div>
-                    </div>
-                    <a href="projeler.html" class="port-arrow"><i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="port-item reveal reveal-delay-2">
-                    <div class="port-img"
-                        style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80')">
-                    </div>
-                    <div class="port-overlay">
-                        <div>
-                            <div class="port-cat">Ticari</div>
-                            <h3 class="port-h3">Ankara Shopping Mall</h3>
-                            <p class="port-loc"><i class="fas fa-map-marker-alt"></i> Ankara, Çankaya</p>
-                        </div>
-                    </div>
-                    <a href="projeler.html" class="port-arrow"><i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="port-item reveal reveal-delay-3">
-                    <div class="port-img"
-                        style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80')">
-                    </div>
-                    <div class="port-overlay">
-                        <div>
-                            <div class="port-cat">Özel Proje</div>
-                            <h3 class="port-h3">Çeşme Boutique Hotel</h3>
-                            <p class="port-loc"><i class="fas fa-map-marker-alt"></i> İzmir, Çeşme</p>
-                        </div>
-                    </div>
-                    <a href="projeler.html" class="port-arrow"><i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="port-cta reveal">
-                <a href="projeler.html" class="btn btn-outline">
-                    <span>Tüm Projeleri Görüntüle</span>
+                <button class="hscroll-btn hscroll-btn-next" aria-label="Sonraki">
                     <i class="fas fa-arrow-right"></i>
-                </a>
+                </button>
             </div>
         </div>
+
+        <!-- Kartlar -->
+        <div class="hscroll-viewport">
+            <div class="hscroll-track">
+
+                <div class="hscroll-card">
+                    <div class="hscroll-img"
+                        style="background-image:url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80')">
+                    </div>
+                    <div class="hscroll-overlay">
+                        <div class="hscroll-info">
+                            <span class="hscroll-cat">Konut</span>
+                            <div class="hscroll-title">Nişantaşı Residence</div>
+                            <div class="hscroll-sub">İstanbul · 2024</div>
+                        </div>
+                    </div>
+                    <div class="hscroll-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="hscroll-card">
+                    <div class="hscroll-img"
+                        style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80')">
+                    </div>
+                    <div class="hscroll-overlay">
+                        <div class="hscroll-info">
+                            <span class="hscroll-cat">Ticari</span>
+                            <div class="hscroll-title">Levent Business Plaza</div>
+                            <div class="hscroll-sub">İstanbul · 2023</div>
+                        </div>
+                    </div>
+                    <div class="hscroll-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="hscroll-card">
+                    <div class="hscroll-img"
+                        style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80')">
+                    </div>
+                    <div class="hscroll-overlay">
+                        <div class="hscroll-info">
+                            <span class="hscroll-cat">Villa</span>
+                            <div class="hscroll-title">Bodrum Sunset Villas</div>
+                            <div class="hscroll-sub">Muğla · 2022</div>
+                        </div>
+                    </div>
+                    <div class="hscroll-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="hscroll-card">
+                    <div class="hscroll-img"
+                        style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80')">
+                    </div>
+                    <div class="hscroll-overlay">
+                        <div class="hscroll-info">
+                            <span class="hscroll-cat">Özel Proje</span>
+                            <div class="hscroll-title">Çeşme Boutique Hotel</div>
+                            <div class="hscroll-sub">İzmir · 2024</div>
+                        </div>
+                    </div>
+                    <div class="hscroll-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="hscroll-card">
+                    <div class="hscroll-img"
+                        style="background-image:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80')">
+                    </div>
+                    <div class="hscroll-overlay">
+                        <div class="hscroll-info">
+                            <span class="hscroll-cat">Konut</span>
+                            <div class="hscroll-title">Etiler Park Residence</div>
+                            <div class="hscroll-sub">İstanbul · 2023</div>
+                        </div>
+                    </div>
+                    <div class="hscroll-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+                <div class="hscroll-card">
+                    <div class="hscroll-img"
+                        style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80')">
+                    </div>
+                    <div class="hscroll-overlay">
+                        <div class="hscroll-info">
+                            <span class="hscroll-cat">Villa</span>
+                            <div class="hscroll-title">Alaçatı Premium Villas</div>
+                            <div class="hscroll-sub">İzmir · 2024</div>
+                        </div>
+                    </div>
+                    <div class="hscroll-arrow"><i class="fas fa-arrow-right"></i></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Dots + progress -->
+        <div class="hscroll-dots"></div>
+        <div class="hscroll-progress-wrap">
+            <div class="hscroll-progress-bar">
+                <div class="hscroll-progress-fill"></div>
+            </div>
+            <button class="hscroll-autoplay-btn" aria-label="Oynat/Duraklat" title="Otomatik oynatma">
+                <i class="fas fa-pause"></i>
+            </button>
+        </div>
+
     </section>
     <div class="gold-divider"></div>
     <!-- Why Us -->
@@ -271,25 +312,21 @@
             </div>
             <div class="why-grid">
                 <div class="why-card reveal reveal-delay-1">
-                    <div class="why-icon"><i class="fas fa-award"></i></div>
                     <h4 class="why-h4">Kalite Garantisi</h4>
                     <p class="why-p">ISO 9001 ve TSE sertifikalı üretim. En yüksek kalite standartlarında sürdürülebilir
                         yapılar.</p>
                 </div>
                 <div class="why-card reveal reveal-delay-2">
-                    <div class="why-icon"><i class="fas fa-clock"></i></div>
                     <h4 class="why-h4">Zamanında Teslim</h4>
                     <p class="why-p">%99 zamanında teslim oranı. Belirlenen sürede, eksiksiz ve kusursuz proje
                         teslimatı.</p>
                 </div>
                 <div class="why-card reveal reveal-delay-3">
-                    <div class="why-icon"><i class="fas fa-users"></i></div>
                     <h4 class="why-h4">Uzman Ekip</h4>
                     <p class="why-p">Deneyimli mimar ve mühendislerden oluşan profesyonel kadro. Her projede
                         mükemmellik.</p>
                 </div>
                 <div class="why-card reveal reveal-delay-4">
-                    <div class="why-icon"><i class="fas fa-handshake"></i></div>
                     <h4 class="why-h4">Güven & Şeffaflık</h4>
                     <p class="why-p">Net iletişim, şeffaf süreçler ve müşteri memnuniyeti odaklı yaklaşım.</p>
                 </div>

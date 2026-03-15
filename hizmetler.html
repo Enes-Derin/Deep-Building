@@ -4,358 +4,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hizmetler - Deep İnşaat</title>
+    <title>Hizmetlerimiz | Deep İnşaat</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 </head>
 
 <body>
+
     <div class="preloader">
-        <div class="preloader-content">
-            <div class="building-animation">
-                <i class="fas fa-building"></i>
-            </div>
-            <div class="loading-text">Yükleniyor...</div>
+        <div class="pl-inner">
+            <div class="pl-ring"></div>
+            <div class="pl-logo"><span class="pl-logo-deep">DEEP</span><span class="pl-logo-line"></span><span
+                    class="pl-logo-insaat">İNŞAAT</span></div>
         </div>
     </div>
 
     <header class="header">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">
-                    <i class="fas fa-building"></i>
-                    <span>Deep İnşaat</span>
-                </div>
-                <nav class="navbar">
-                    <a href="index.html">Ana Sayfa</a>
-                    <a href="hakkimizda.html">Hakkımızda</a>
-                    <a href="hizmetler.html" class="active">Hizmetler</a>
-                    <a href="projeler.html">Projeler</a>
-                    <a href="iletisim.html">İletişim</a>
-                </nav>
-                <div class="mobile-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
+        <div class="header-inner">
+            <a href="index.html" class="logo"><span class="logo-diamond">◆</span>
+                <div class="logo-text"><span class="logo-d">DEEP</span><span class="logo-i">İNŞAAT</span></div>
+            </a>
+            <nav class="nav">
+                <a href="index.html" class="nav-a">Ana Sayfa</a>
+                <a href="hakkimizda.html" class="nav-a">Kurumsal</a>
+                <a href="hizmetler.html" class="nav-a active">Hizmetler</a>
+                <a href="projeler.html" class="nav-a">Portföy</a>
+                <a href="iletisim.html" class="nav-a">İletişim</a>
+            </nav>
+            <a href="iletisim.html" class="header-cta"><span>Proje Danışmanlığı</span><i
+                    class="fas fa-arrow-right"></i></a>
+            <button class="burger"><span></span><span></span><span></span></button>
         </div>
     </header>
+    <nav class="mobile-nav">
+        <a href="index.html" class="nav-a">Ana Sayfa</a><a href="hakkimizda.html" class="nav-a">Kurumsal</a><a
+            href="hizmetler.html" class="nav-a">Hizmetler</a><a href="projeler.html" class="nav-a">Portföy</a><a
+            href="iletisim.html" class="nav-a">İletişim</a>
+    </nav>
 
     <section class="page-hero">
+        <div class="page-hero-bg"
+            style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80')">
+        </div>
         <div class="page-hero-overlay"></div>
-        <div class="container">
-            <h1 class="page-title">Hizmetlerimiz</h1>
-            <p class="page-subtitle">Baştan sona profesyonel çözümler</p>
+        <div class="page-hero-content">
+            <div class="page-hero-tag">Hizmetlerimiz</div>
+            <h1 class="page-hero-h1">Uzmanlık Alanlarımız</h1>
+            <p class="page-hero-sub">Her ihtiyaca özel premium çözümler</p>
         </div>
     </section>
 
-    <section class="services-detail">
-        <div class="container">
-            <div class="service-detail-card">
-                <div class="service-icon-large">
-                    <i class="fas fa-home"></i>
-                </div>
-                <h3>Anahtar Teslim İnşaat</h3>
-                <p>Projenizin tüm süreçlerini tek elden yönetiyor, zamanında ve eksiksiz teslim sağlıyoruz. Arsa
-                    alımından son işleme kadar her detayla ilgilenir, yatırımınızın en yüksek değeri yakalanmasını
-                    sağlarız.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Şehir planı ve imar mevzuatı uygunluk kontrolleri</li>
-                    <li><i class="fas fa-check"></i> Çoklu şanti yönetimi ve koordinasyon</li>
-                    <li><i class="fas fa-check"></i> Kalite kontrol ve sertifikasyon</li>
-                    <li><i class="fas fa-check"></i> İş güvenliği ve çevre uygunluğu</li>
-                    <li><i class="fas fa-check"></i> Son sahip teslimatı ve garantiler</li>
-                </ul>
-            </div>
+    <!-- Services Detail -->
+    <section class="svc-detail-section section">
+        <div class="wrap">
+            <div class="svc-detail-grid">
 
-            <div class="service-detail-card">
-                <div class="service-icon-large">
-                    <i class="fas fa-city"></i>
+                <div class="svc-detail-card reveal">
+                    <div>
+                        <div class="svc-detail-head">
+                            <div class="svc-detail-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <h3 class="svc-detail-h3"
+                                    data-reveal-img="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80">
+                                    Lüks Konut Projeleri
+                                </h3>
+                            </div>
+                        </div>
+                        <p class="svc-detail-p">Premium villa, rezidans ve özel konut projelerinde benzersiz yaşam
+                            alanları yaratıyoruz. Modern mimari anlayışı, yüksek kalite standartları ve müşteri odaklı
+                            yaklaşımımızla hayalinizdeki evi gerçeğe dönüştürüyoruz.</p>
+                    </div>
+                    <div class="svc-features">
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Premium lokasyonlarda villa ve rezidans
+                                projeleri</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Özel tasarım ve kişiye özel mimari
+                                çözümler</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Akıllı ev teknolojileri ve otomasyon
+                                sistemleri</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Enerji verimliliği ve sürdürülebilir
+                                yapı çözümleri</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Lüks iç mekan tasarımı ve dekorasyon
+                                hizmetleri</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Peyzaj düzenlemesi ve dış mekan
+                                tasarımı</span></div>
+                    </div>
                 </div>
-                <h3>Konut Projesi Uygulaması</h3>
-                <p>Mimarı ve şekilsel tasarımı yapılmış konut projelerini, kaliteli işçilik ve en iyi malzemelerle
-                    uygulamaya taşıyoruz.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Detaylı inşaat organizasyonu ve lojistik</li>
-                    <li><i class="fas fa-check"></i> Tesisat (su, elektrik, doğalgaz) uygulaması</li>
-                    <li><i class="fas fa-check"></i> İç cephe ve dış cephe işleri</li>
-                    <li><i class="fas fa-check"></i> Asansör ve güvenlik sistemi tamamlanması</li>
-                    <li><i class="fas fa-check"></i> Teslimat öncesi muhasebe ve danışmanlık</li>
-                </ul>
-            </div>
 
-            <div class="service-detail-card">
-                <div class="service-icon-large">
-                    <i class="fas fa-building"></i>
+                <div class="svc-detail-card reveal">
+                    <div>
+                        <div class="svc-detail-head">
+                            <div class="svc-detail-icon"><i class="fas fa-building"></i></div>
+                            <div>
+                                <h3 class="svc-detail-h3"
+                                    data-reveal-img="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80">
+                                    Ticari Yapılar</h3>
+                            </div>
+                        </div>
+                        <p class="svc-detail-p">A+ sınıfı ofis binaları, plazalar ve ticaret merkezleri tasarlıyor ve
+                            inşa ediyoruz. Şehrin merkezinde, ulaşımı kolay noktalarda, işinize değer katacak ticari
+                            projeler gerçekleştiriyoruz.</p>
+                    </div>
+                    <div class="svc-features">
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>A+ sınıfı ofis binaları ve plaza
+                                projeleri</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Alışveriş merkezleri ve ticaret
+                                kompleksleri</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>İş merkezleri ve karma kullanımlı
+                                yapılar</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>LEED ve BREEAM sertifikalı yeşil
+                                binalar</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Yüksek teknoloji altyapısı ve BMS
+                                sistemleri</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Geniş otopark alanları ve güvenlik
+                                sistemleri</span></div>
+                    </div>
                 </div>
-                <h3>Ticari Yapı İnşaatı</h3>
-                <p>Ofis, ticaret merkezi, otel ve diğer ticari yapıları, işletme ihtiyaçlarına göre tasarlayıp
-                    uygulamaya taşıyoruz.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Mimar ve şef ekip ile işbirliği</li>
-                    <li><i class="fas fa-check"></i> Esnek alan tasarımı ve danışmanlığı</li>
-                    <li><i class="fas fa-check"></i> İşletme sistemleri ve HVAC yönetimi</li>
-                    <li><i class="fas fa-check"></i> Erken işletme ve maliyet optimizasyonu</li>
-                    <li><i class="fas fa-check"></i> Bakım ve onarım hizmetleri</li>
-                </ul>
-            </div>
 
-            <div class="service-detail-card">
-                <div class="service-icon-large">
-                    <i class="fas fa-chart-line"></i>
+                <div class="svc-detail-card reveal">
+                    <div>
+                        <div class="svc-detail-head">
+                            <div class="svc-detail-icon"><i class="fas fa-chess-king"></i></div>
+                            <div>
+                                <h3 class="svc-detail-h3"
+                                    data-reveal-img="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80">
+                                    Özel Projeler</h3>
+                            </div>
+                        </div>
+                        <p class="svc-detail-p">Butik oteller, spa merkezleri, spor kompleksleri ve özel taleplere
+                            yönelik projeler. Benzersiz konseptler ve mükemmel işçilikle her projeyi bir sanat eserine
+                            dönüştürüyoruz.</p>
+                    </div>
+                    <div class="svc-features">
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Butik otel ve apart otel
+                                projeleri</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Wellness merkezi ve spa tesisleri</span>
+                        </div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Spor kompleksleri ve fitness
+                                merkezleri</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Restoran ve gastronomi mekanları</span>
+                        </div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Kültür ve sanat merkezleri</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Özel konsept ve tematik yapılar</span>
+                        </div>
+                    </div>
                 </div>
-                <h3>Proje Danışmanlığı</h3>
-                <p>İnşaat projesinin her aşamasında sizin yanınızda olmak, teknik ve yönetimsel destek sağlamak bizim
-                    uzmanlığımızdır.</p>
-                <ul class="service-features">
-                    <li><i class="fas fa-check"></i> Feasibility çalışmaları ve ön planlamalar</li>
-                    <li><i class="fas fa-check"></i> İmar ve şehircilik danışmanlığı</li>
-                    <li><i class="fas fa-check"></i> Bütçe ve süre tahmini</li>
-                    <li><i class="fas fa-check"></i> Teknik spesifikasyon tasarımı</li>
-                    <li><i class="fas fa-check"></i> Proje denetimi ve kalite kontrolü</li>
-                </ul>
+
+                <div class="svc-detail-card reveal">
+                    <div>
+                        <div class="svc-detail-head">
+                            <div class="svc-detail-icon"><i class="fas fa-handshake"></i></div>
+                            <div>
+                                <h3 class="svc-detail-h3"
+                                    data-reveal-img="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80">
+                                    Proje Yönetimi & Danışmanlık</h3>
+                            </div>
+                        </div>
+                        <p class="svc-detail-p">Ön fizibilite çalışmalarından nihai teslime kadar tüm süreçleri
+                            yönetiyor, risklerinizi minimize ediyor ve bütçenizi optimize ediyoruz. Deneyimli ekibimizle
+                            projenizin başarıya ulaşmasını garanti ediyoruz.</p>
+                    </div>
+                    <div class="svc-features">
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Fizibilite etüdü ve yatırım
+                                analizi</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Mimari ve mühendislik
+                                danışmanlığı</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>İhale ve sözleşme yönetimi</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Şantiye organizasyonu ve
+                                koordinasyon</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Kalite kontrol ve denetim
+                                hizmetleri</span></div>
+                        <div class="svc-feat"><i class="fas fa-check"></i><span>Maliyet kontrolü ve raporlama</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-
-    <section class="process-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Süreç</span>
-                <h2>Çalışma Sürecimiz</h2>
-                <p>Her aşamada profesyonel destek</p>
+    <div class="gold-divider"></div>
+    <!-- Process -->
+    <section class="process-section section">
+        <div class="wrap">
+            <div class="sh center reveal">
+                <div class="sh-tag">Sürecimiz</div>
+                <h2 class="sh-title">Çalışma <em>Metodolojimiz</em></h2>
+                <p class="sh-desc">Her projede uygulanan standart süreçlerimiz</p>
             </div>
-
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h4>Değerlendirme</h4>
-                    <p>Projenizi detaylı analiz ediyoruz</p>
+            <div class="process-line">
+                <div class="process-step reveal">
+                    <div class="process-dot">1</div>
+                    <div>
+                        <h4 class="process-h4">Keşif & Analiz</h4>
+                        <p class="process-p">Projenizi dinliyor, ihtiyaçlarınızı analiz ediyor ve detaylı bir fizibilite
+                            çalışması gerçekleştiriyoruz. Bütçe, zaman ve kalite hedeflerinizi belirliyoruz.</p>
+                    </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h4>Planlama</h4>
-                    <p>Detaylı zaman ve bütçe planı yapıyoruz</p>
+                <div class="process-step reveal">
+                    <div class="process-dot">2</div>
+                    <div>
+                        <h4 class="process-h4">Tasarım & Planlama</h4>
+                        <p class="process-p">Mimarlar ve mühendislerimiz ile detaylı tasarım sürecini başlatıyor, yasal
+                            izinleri alıyor ve kapsamlı bir proje planı hazırlıyoruz.</p>
+                    </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h4>Uygulama</h4>
-                    <p>Profesyonel takım ile şantiye açıyoruz</p>
+                <div class="process-step reveal">
+                    <div class="process-dot">3</div>
+                    <div>
+                        <h4 class="process-h4">İnşaat & Uygulama</h4>
+                        <p class="process-p">Deneyimli ekibimiz ile şantiyeyi organize ediyor, yüksek kalite
+                            standartlarında inşaat sürecini yönetiyor ve her aşamayı raporluyoruz.</p>
+                    </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h4>Kontrol</h4>
-                    <p>Her aşamada kalite kontrol yapıyoruz</p>
+                <div class="process-step reveal">
+                    <div class="process-dot">4</div>
+                    <div>
+                        <h4 class="process-h4">Kalite Kontrol</h4>
+                        <p class="process-p">Tüm aşamalarda titiz kalite kontrolleri yapıyor, test ve ölçümlerle
+                            standartlara uygunluğu garanti ediyor, sertifikasyonları alıyoruz.</p>
+                    </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <h4>Teslim</h4>
-                    <p>Zamanında ve eksiksiz teslim sağlıyoruz</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">6</div>
-                    <h4>Destek</h4>
-                    <p>Teslim sonrası garantili hizmet</p>
+                <div class="process-step reveal">
+                    <div class="process-dot">5</div>
+                    <div>
+                        <h4 class="process-h4">Teslim & Garanti</h4>
+                        <p class="process-p">Projenizi zamanında ve eksiksiz teslim ediyor, kapsamlı garanti hizmetleri
+                            sunuyor ve teslim sonrası destek sağlıyoruz.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+    <div class="gold-divider"></div>
 
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-item">ISO 9001 <span class="dot">·</span></div>
+            <div class="marquee-item">TSE Onaylı <span class="dot">·</span></div>
+            <div class="marquee-item">150+ Proje <span class="dot">·</span></div>
+            <div class="marquee-item">20 Yıl Deneyim <span class="dot">·</span></div>
+            <div class="marquee-item">LEED Sertifikalı <span class="dot">·</span></div>
+            <div class="marquee-item">5000+ Mutlu Müşteri <span class="dot">·</span></div>
+            <div class="marquee-item">%99 Zamanında Teslim <span class="dot">·</span></div>
+            <div class="marquee-item">Sürdürülebilir Yapı <span class="dot">·</span></div>
+        </div>
+    </div>
+    <div class="gold-divider"></div>
+    <!-- CTA -->
+    <section class="cta-section section">
+        <div class="wrap">
+            <div class="cta-inner reveal">
+                <h2 class="cta-h2">Projeniz İçin En Doğru<br><em>Çözümü Birlikte Bulalım</em></h2>
+                <p class="cta-p">Uzman ekibimiz, ihtiyaçlarınıza özel çözümler sunmaya hazır.</p>
+                <div class="cta-btns">
+                    <a href="iletisim.html" class="btn btn-gold btn-magnetic"><span>Hemen Başlayın</span><i
+                            class="fas fa-arrow-right"></i></a>
+                    <a href="tel:+902121234567" class="btn btn-ghost btn-magnetic"><i class="fas fa-phone"></i><span>+90
+                            (212) 123 45
+                            67</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="gold-divider"></div>
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <i class="fas fa-building"></i>
-                        <span>Deep İnşaat</span>
-                    </div>
-                    <p>Güvenle yükselen yapılar için, planlı ve profesyonel inşaat hizmetleri.</p>
-                    <div class="footer-certificates">
-                        <div class="certificate-badge">
-                            <i class="fas fa-certificate"></i>
-                            <span>ISO 9001</span>
+        <div class="footer-main">
+            <div class="wrap">
+                <div class="footer-grid">
+                    <div>
+                        <div class="footer-logo"><span class="logo-diamond"
+                                style="color:var(--gold);font-size:1.3rem">◆</span>
+                            <div class="logo-text"><span class="logo-d">DEEP</span><span class="logo-i">İNŞAAT</span>
+                            </div>
                         </div>
-                        <div class="certificate-badge">
-                            <i class="fas fa-award"></i>
-                            <span>TSE</span>
+                        <p class="footer-desc">Türkiye'nin prestij adresi. 2004'ten beri mükemmelliğin temsilcisi.</p>
+                        <div class="footer-certs">
+                            <div class="footer-cert"><i class="fas fa-certificate"></i>ISO 9001</div>
+                            <div class="footer-cert"><i class="fas fa-award"></i>TSE</div>
                         </div>
                     </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Hızlı Linkler</h4>
-                    <ul>
-                        <li><a href="hakkimizda.html"><i class="fas fa-angle-right"></i> Hakkımızda</a></li>
-                        <li><a href="hizmetler.html"><i class="fas fa-angle-right"></i> Hizmetler</a></li>
-                        <li><a href="projeler.html"><i class="fas fa-angle-right"></i> Projeler</a></li>
-                        <li><a href="iletisim.html"><i class="fas fa-angle-right"></i> İletişim</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>İletişim Bilgileri</h4>
-                    <ul class="contact-list">
-                        <li><i class="fas fa-map-marker-alt"></i><span>Maslak, Sarıyer/İstanbul</span></li>
-                        <li><i class="fas fa-phone"></i><span>+90 (212) 123 45 67</span></li>
-                        <li><i class="fas fa-envelope"></i><span>info@deepinsaat.com.tr</span></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Bizi Takip Edin</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    <div class="footer-col">
+                        <h4>Kurumsal</h4>
+                        <ul class="footer-links">
+                            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                            <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
+                            <li><a href="projeler.html">Projeler</a></li>
+                            <li><a href="#">Kariyer</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>İletişim</h4>
+                        <ul class="footer-contact-list">
+                            <li class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Maslak,
+                                    Sarıyer<br>İstanbul</span></li>
+                            <li class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+902121234567">+90
+                                    (212) 123 45 67</a></li>
+                            <li class="footer-contact-item"><i class="fas fa-envelope"></i><a
+                                    href="mailto:info@deepinsaat.com">info@deepinsaat.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Takip Edin</h4>
+                        <div class="footer-social"><a href="#" class="footer-soc-btn"><i
+                                    class="fab fa-linkedin-in"></i></a><a href="#" class="footer-soc-btn"><i
+                                    class="fab fa-instagram"></i></a><a href="#" class="footer-soc-btn"><i
+                                    class="fab fa-facebook-f"></i></a><a href="#" class="footer-soc-btn"><i
+                                    class="fab fa-youtube"></i></a></div>
+                        <div class="newsletter">
+                            <p>Bültenimize Abone Olun</p>
+                            <form class="newsletter-form"><input type="email" placeholder="E-posta adresiniz"
+                                    required><button type="submit"><i class="fas fa-arrow-right"></i></button></form>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Deep İnşaat. Tüm hakları saklıdır.</p>
+        </div>
+        <div class="footer-bottom">
+            <div class="wrap">
+                <div class="footer-bottom-inner">
+                    <p class="footer-copy">© 2026 Deep İnşaat. Tüm hakları saklıdır.</p>
+                    <div class="footer-legal"><a href="#">Gizlilik</a><a href="#">Kullanım Koşulları</a></div>
+                </div>
             </div>
         </div>
     </footer>
-
-    <button class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <style>
-        .page-hero {
-            background: linear-gradient(135deg, rgba(10, 14, 39, 0.9), rgba(19, 24, 41, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 8rem var(--spacing-unit) 5rem;
-            margin-top: 70px;
-            text-align: center;
-            position: relative;
-        }
-
-        .page-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .page-subtitle {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .services-detail {
-            padding: 6rem var(--spacing-unit);
-            background: linear-gradient(180deg, #131829 0%, #18202f 100%);
-        }
-
-        .service-detail-card {
-            background: rgba(19, 24, 41, 0.6);
-            padding: 3rem;
-            border-radius: 16px;
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            margin-bottom: 2.5rem;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .service-detail-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 217, 255, 0.5);
-            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
-        }
-
-        .service-icon-large {
-            width: 80px;
-            height: 80px;
-            border-radius: 16px;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: white;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 8px 24px rgba(0, 217, 255, 0.3);
-        }
-
-        .service-detail-card h3 {
-            font-size: 2rem;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-
-        .service-detail-card p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .service-features {
-            list-style: none;
-        }
-
-        .service-features li {
-            padding: 0.8rem 0;
-            color: var(--text-muted);
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .service-features li i {
-            color: var(--primary-accent);
-            font-size: 1.2rem;
-        }
-
-        .process-section {
-            padding: 6rem var(--spacing-unit);
-            background: rgba(19, 24, 41, 0.4);
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .process-step {
-            background: rgba(19, 24, 41, 0.6);
-            padding: 2.5rem;
-            border-radius: 16px;
-            border: 1px solid rgba(0, 217, 255, 0.2);
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .process-step:hover {
-            transform: translateY(-10px);
-            border-color: rgba(0, 217, 255, 0.5);
-            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
-        }
-
-        .step-number {
-            font-size: 4rem;
-            font-weight: 900;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
-
-        .process-step h4 {
-            font-size: 1.5rem;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-        }
-
-        .process-step p {
-            color: var(--text-muted);
-        }
-    </style>
-
+    <button class="btt" id="btt"><i class="fas fa-arrow-up"></i></button>
     <script src="script.js"></script>
 </body>
 
